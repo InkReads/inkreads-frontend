@@ -76,7 +76,7 @@ export default function TopNavBar() {
             </div>
             <Input placeholder="Search..." className="max-w-sm md:w-[16rem] lg:w-[20rem] h-10 shadow-none pl-10"  />
           </div>
-          <Button variant="link" asChild className="hidden sm:block"><Link href="/">LOGIN</Link></Button>
+                  <Button variant="link" asChild className="hidden sm:block"><Link href="/login-page">LOGIN</Link></Button>
           <Button variant="link" asChild className="hidden sm:block"><Link href="/">SIGN UP </Link></Button>
         </section>
       </div>
