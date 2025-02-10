@@ -2,7 +2,7 @@
 
 import './signup-page.css';
 import { useState } from 'react';
-import { auth } from '../../lib/firebase.config';
+import { auth, googleProvider, signInWithPopup } from '../../lib/firebase.config';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useRouter } from 'next/navigation'; 
 
@@ -27,6 +27,16 @@ export default function Signup() {
             } else {
                 setError("An unexpected error occurred.");
             }
+        }
+    };
+
+    const handleGoogleSignIn = async () => {
+        try {
+            await signInWithPopup(auth, googleProvider);
+            alert("Logged in successfully!");
+            router.push('/');
+        } catch (error) {
+            console.error("Google Sign-In Error:", error);
         }
     };
 
@@ -66,6 +76,7 @@ export default function Signup() {
                 </div>
                 <button type="submit">Signup</button>
                 {error && <p className="error-message">{error}</p>}
+                <button onClick={handleGoogleSignIn}>Sign up with Google</button>
             </form>
         </div>
     );
