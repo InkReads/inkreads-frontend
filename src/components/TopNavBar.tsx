@@ -1,3 +1,5 @@
+'use client';
+
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -17,6 +19,8 @@ import { Roboto } from "next/font/google";
 import { MenuIcon, SearchIcon, ChevronDownIcon } from "lucide-react";
 import Logo from "@/assets/logo.png";
 
+import { usePathname } from "next/navigation"
+
 const roboto = Roboto({
   subsets: ["latin"],  
   weight: "500",
@@ -28,6 +32,11 @@ const sections = [
 ];
 
 export default function TopNavBar() {
+    const pathname = usePathname();
+
+    const hiddenPages = ["/login-page", "/signup-page"];
+    if (hiddenPages.includes(pathname)) return null;
+
   return (
     <header className={`${roboto.className} px-4 border-b-[0.5px]`}>
       <div className="flex w-full h-16 justify-between">
