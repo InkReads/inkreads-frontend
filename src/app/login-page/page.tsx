@@ -73,7 +73,7 @@ export default function Login() {
                         />
                     </div>
                     <div>
-                        <button className='continue-button' onSubmit={handleLogin} >Continue</button>
+                        <button className='continue-button' onClick={handleLogin} >Continue</button>
                         {error && <p className="error-message">{error}</p>}
                     </div>
                     <div className='break'>
