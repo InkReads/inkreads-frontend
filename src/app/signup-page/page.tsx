@@ -4,7 +4,8 @@ import './signup-page.css';
 import { useState } from 'react';
 import { auth, googleProvider, signInWithPopup } from '../../lib/firebase.config';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { useRouter } from 'next/navigation'; 
+import { useRouter } from 'next/navigation';
+import { saveUserProfile } from '../../lib/firebase.config';
 
 export default function Signup() {
     const [email, setEmail] = useState('');
@@ -18,7 +19,12 @@ export default function Signup() {
         setError(null);
 
         try {
-            await createUserWithEmailAndPassword(auth, email, password);
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+
+            // Save user profile in Firestore
+            await saveUserProfile(user.uid, email, username);
+
             alert('User created successfully!');
             router.push('/login-page'); 
         } catch (err: unknown) {
@@ -32,7 +38,12 @@ export default function Signup() {
 
     const handleGoogleSignIn = async () => {
         try {
-            await signInWithPopup(auth, googleProvider);
+            const result = await signInWithPopup(auth, googleProvider);
+            const user = result.user;
+
+            // Save Google user profile in Firestore
+            await saveUserProfile(user.uid, user.email || "", user.displayName || "Anonymous");
+
             alert("Logged in successfully!");
             router.push('/');
         } catch (error) {
@@ -76,7 +87,7 @@ export default function Signup() {
                 </div>
                 <button type="submit">Signup</button>
                 {error && <p className="error-message">{error}</p>}
-                <button onClick={handleGoogleSignIn}>Sign up with Google</button>
+                <button type="button" onClick={handleGoogleSignIn}>Sign up with Google</button>
             </form>
         </div>
     );
