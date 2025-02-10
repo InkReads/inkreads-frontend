@@ -113,8 +113,8 @@ const NavSheet = () => {
                 <Link href="/">{Object.keys(item)}</Link>
               </Button>
             ))}
-            <Button variant="link" asChild><Link href="/">LOGIN</Link></Button>
-            <Button variant="link" asChild><Link href="/">SIGN UP</Link></Button>
+            <Button variant="link" asChild><Link href="/login-page">LOGIN</Link></Button>
+            <Button variant="link" asChild><Link href="/signup-page">SIGN UP</Link></Button>
           </div>
         </SheetContent>
       </Sheet>

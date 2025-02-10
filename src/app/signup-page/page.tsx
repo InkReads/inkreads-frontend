@@ -92,7 +92,6 @@ export default function Signup() {
                             className="google-img"
                             src={googleIcon}
                             alt="buttonpng"
-                            border="0"
                         /> Continue with Google</button>
                     <div className='signup-link'>
                         <p>Have an account?</p>
@@ -102,7 +101,7 @@ export default function Signup() {
             </div>
             <div className='signup-img1'>
                 <Image
-                    className="bookicon"
+                    className="bookicon hidden lg:block"
                     src={bookIcon}
                     alt="book"
                     width="209"
@@ -111,7 +110,7 @@ export default function Signup() {
             </div>
             <div className='signup-img2'>
                 <Image
-                    className="notebookicon"
+                    className="notebookicon hidden lg:block"
                     src={notebookIcon}
                     alt="book"
                     width="198"

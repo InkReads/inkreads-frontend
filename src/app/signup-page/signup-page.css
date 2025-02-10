@@ -58,26 +58,20 @@
 
     .signup-input input {
         height: 40px;
-        font-family: 'Times New Roman';
         font-size: 20px;
         border-radius: 10px;
         border-width: 1px;
+        padding-left: 10px;
     }
-
-        .signup-input input::placeholder {
-            font-family: 'Times New Roman';
-            font-size: 20px;
-        }
 
 .continue-button {
     width: 521px;
     height: 40px;
-    margin-top: 15px;
+    margin-top: 16px;
     border-radius: 10px;
     border-width: 1px;
     background-color: #4D74FF;
     color: white;
-    font-family: 'Times New Roman';
     font-size: 20px;
     cursor: pointer;
 }
@@ -98,33 +92,12 @@
 
     .break .break-text {
         padding: 0 10px;
-        font-family: 'Times New Roman';
         font-size: 20px;
     }
 
 .googleButton {
     display: flex;
     color: #656565;
-    font-family: 'Times New Roman';
-    font-size: 15px;
-    font-weight: bold;
-    justify-content: center;
-    align-items: center;
-    width: 426px;
-    background-color: white;
-    border-radius: 10px;
-    border-width: 1px;
-}
-
-.google-img {
-    width: 30px;
-    height: 31px;
-}
-
-.googleButton {
-    display: flex;
-    color: #656565;
-    font-family: 'Times New Roman';
     font-size: 15px;
     font-weight: bold;
     justify-content: center;
@@ -151,7 +124,6 @@
     justify-content: center;
     align-items: center;
     gap: 4px;
-    font-family: 'Times New Roman';
     font-size: 15px;
     color: #656565;
 }
@@ -169,8 +141,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-right: 10%;
-    margin-bottom: 34px;
+    margin-bottom: 172px;
 }
 
 .signup-img2 {
@@ -178,30 +149,5 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-right: 5px;
-    margin-top: 34px;
-}
-
-/******Responsive******/
-
-/*Mobile Responsive*/
-@media only screen and (max-width: 760px) {
-    .signup-img1 .bookIcon {
-        display: none;
-    }
-
-    .signup-img2 .notebookIcon {
-        display: none;
-    }
-}
-
-/* Tablet Responsive*/
-@media only screen and (max-width: 1060px) {
-    .signup-img1 .bookIcon {
-        display: none;
-    }
-
-    .signup-img2 .notebookIcon {
-        display: none;
-    }
+    margin-top: 136px;
 }
